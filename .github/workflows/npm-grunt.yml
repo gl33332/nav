@@ -27,3 +27,6 @@ jobs:
         npm install
         npm install grunt --save-dev
         grunt
+ npm install grunt**:
+ The workflow is already installing `grunt` via grunt-contrib-uglify --save-dev
+`npm install grunt --save-dev`. Once the `Gruntfile.js` is added, the workflow should work as expected:
