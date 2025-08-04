@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   // Project configuration.
-  grunt.initConfig({
+  grunt.initConfig({});
+  grunt.registerTask('default', []);
+};
     pkg: grunt.file.readJSON('package.json'),
     // Example task
     uglify:min.js'
