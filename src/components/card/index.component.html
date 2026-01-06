@@ -31,7 +31,7 @@
       >
         <div
           class="ml-2"
-          *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
         >
           <app-breadcrumb [data]="dataSource" />
         </div>
@@ -131,7 +131,7 @@
       >
         <div
           class="mb-2"
-          *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
         >
           <app-breadcrumb [data]="dataSource" />
         </div>
@@ -162,7 +162,7 @@
       >
         <div
           class="mb-2"
-          *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
         >
           <app-breadcrumb [data]="dataSource" />
         </div>
@@ -191,7 +191,7 @@
       >
         <div
           class="ml-2 mt-2"
-          *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
         >
           <app-breadcrumb [data]="dataSource" />
         </div>
@@ -251,7 +251,7 @@
         <div class="poster-box" [style.background]="backgroundColor">
           <div
             class="breadcrumb"
-            *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+            *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
           >
             <app-breadcrumb [data]="dataSource" />
           </div>
@@ -304,7 +304,7 @@
         nz-tooltip
       >
         <ng-template #titleTemplate let-thing>
-          <p>{{ dataSource.__name__ || dataSource.name }}</p>
+          <div>{{ dataSource.__name__ || dataSource.name }}</div>
           {{ dataSource.__desc__ || dataSource.desc }}
           <tag-list
             [data]="dataSource.tags"
@@ -340,7 +340,7 @@
       >
         <div
           class="mb-2"
-          *ngIf="commonService.searchKeyword && dataSource?.breadcrumb"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
         >
           <app-breadcrumb [data]="dataSource" />
         </div>

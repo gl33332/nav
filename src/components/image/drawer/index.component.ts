@@ -30,7 +30,7 @@ import { UploadImageComponent } from 'src/components/upload-image/index.componen
 export class ImageDrawerComponent {
   @Output() ok = new EventEmitter<void>()
 
-  $t = $t
+  readonly $t = $t
   visible = false
   validateForm!: FormGroup
   index = 0
@@ -46,7 +46,7 @@ export class ImageDrawerComponent {
   open(data: any, idx: number) {
     this.index = idx
     for (const k in data) {
-      this.validateForm.get(k)!?.setValue(data[k])
+      this.validateForm.get(k)?.setValue(data[k])
     }
     this.visible = true
   }

@@ -12,7 +12,7 @@
     *ngIf="!isSelfDevelop"
     nz-button
     style="margin: 0 15px 20px 15px"
-    (click)="handleReset()"
+    (click)="handleRestoreData()"
   >
     {{ $t('_resetInitData') }}
   </button>
@@ -41,7 +41,7 @@
     {{ $t('_errCountTip', { count: settings.errorUrlCount || 0 }) }}
   </div>
 
-  <nz-tabset
+  <nz-tabs
     *ngIf="isLogin"
     [nzSelectedIndex]="tabActive"
     (nzSelectedIndexChange)="onTabChange($event)"
@@ -474,5 +474,5 @@
         </tbody>
       </nz-table>
     </nz-tab>
-  </nz-tabset>
+  </nz-tabs>
 </div>

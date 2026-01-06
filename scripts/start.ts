@@ -20,7 +20,6 @@ import {
   PATHS,
   getConfig,
   fileWriteStream,
-  writePWA,
 } from './utils'
 import { replaceJsdelivrCDN } from '../src/utils/pureUtils'
 import type {
@@ -291,6 +290,25 @@ const main = async () => {
     } else {
       component.components.push(news)
     }
+    //
+    idx = component.components.findIndex(
+      (item) => item['type'] === ComponentType.Carousel,
+    )
+    const carousel = {
+      type: ComponentType.Carousel,
+      id: -ComponentType.Carousel,
+      imgs: [],
+      width: 220,
+      fit: 'cover',
+    }
+    if (idx >= 0) {
+      component.components[idx] = {
+        ...carousel,
+        ...component.components[idx],
+      }
+    } else {
+      component.components.push(carousel)
+    }
     fs.writeFileSync(PATHS.component, JSON.stringify(component))
   }
 
@@ -366,7 +384,7 @@ const main = async () => {
     settings.headerContent ??= ''
     settings.footerContent ??= `
 <div class="dark-white">
-  <div>共收录$\{total\}个网站</div>
+  <div>共收录$\{total}个网站</div>
   <div>Copyright © 2018-$\{year} $\{hostname}, All Rights Reserved</div>  
 </div>
 `.trim()
